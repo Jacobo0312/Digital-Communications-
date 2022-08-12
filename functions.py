@@ -28,6 +28,8 @@ def getAlphabet(input):
             alphabet[symbol]+=1
         else:
             alphabet[symbol]=1
+    alphabet = sorted(alphabet.items(), key=lambda x: x[1], reverse=True)
+    alphabet=dict(alphabet)
     return alphabet
 
 

@@ -2,18 +2,20 @@
 
 
 from math import log
-from functions import entropy
+from functions import calculateProbabilities, entropy,getAlphabet
 
-probabilities=[0.4,0.3,0.2,0.1]
+string="CADA DIA SABEMOS MAS Y ENTENDEMOS MENOS"
 
-code1=[1,2,3,4]
-code2=[2,2,2,2]
-code3=[1,2,3,3]
+alphabet=getAlphabet(string)
 
+length=len(string)
+probabilities=calculateProbabilities(alphabet,length)
 
+#code numero de bits
 
+code=[]
 
-def averageLength(code):
+def averageLength(code,probabilities):
     sum=0
     for i in range(len(code)):
         sum+=code[i]*probabilities[i]
@@ -23,13 +25,14 @@ def averageLength(code):
 
 def efficiency(code):
     l=averageLength(code)
+    print("Average length:",l)
     e=entropy(probabilities)
+    print("Entropy:",e)
     return e/l
 
 
-print("Code1",efficiency(code1)*100,"%")
-print("Code2",efficiency(code2)*100,"%")
-print("Code3",efficiency(code3)*100,"%")
+print("Code1",efficiency(code,probabilities)*100,"%")
+
 
 
 
