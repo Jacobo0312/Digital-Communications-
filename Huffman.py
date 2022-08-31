@@ -3,7 +3,7 @@ import string
 from functions import *
 
 
-string="DOCTOR BOB GORDON SHOPS HOT DOGS FROM BOSTON"
+string='PAPA GARLAND HAD A HAT AND A JAZZ BAND'
 
 # A Huffman Tree Node
 class node:
@@ -75,8 +75,8 @@ while len(nodes) > 1:
 	right = nodes[1]
 
 	# assign directional value to these nodes
-	left.huff = 1
-	right.huff = 0
+	left.huff = 0
+	right.huff = 1
 
 	# combine the 2 smallest nodes to create
 	# new node as their parent

@@ -41,3 +41,10 @@ def calculateProbabilities(alphabet,length):
     return probabilities.values()
 
 
+
+def calculateProbabilitiesWithSymbol(alphabet,length):
+    probabilities={}
+    for symbol in alphabet:
+        probabilities[symbol]=alphabet[symbol]/length
+    return probabilities
+

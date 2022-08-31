@@ -23,6 +23,7 @@ def compress(uncompressed,dictionary):
     # Output the code for w.
     if w:
         result.append(dictionary[w])
+    print(dictionary)
     return result
  
  
@@ -53,35 +54,13 @@ def decompress(compressed,dictionary):
         w = entry
     return result
  
- 
+
 
 
 # How to use:
 
-dictionary = {'B':0,'N':1}
+dictionary = {' ':0,'P':1,'H':2,'Z':3,'G':4,'R':5,'A':6,'L':7,'T':8,'J':9,'B':10,'N':11,'D':12}
 
-input=[0, 2, 3, 1, 3, 0, 5, 4, 1, 8, 6]
+compressed = compress("PAPA GARLAND HAD A HAT AND A JAZZ BAND",dictionary)
+print(compressed)
 
-decompressed = decompress(input,dictionary)
-
-decompress=list(decompressed)
-
-# Convert output to message format Matrix 5 x 5
-
-count=0
-message=""
-for i in decompress:
-    if i=='B':
-        x=" BLANCO "
-    else:
-        x=" NEGRO  "
-    if (count==4):
-        count=0
-        
-        message+=x+"\n"
-    else:
-        count+=1
-        message+=x
-
-
-print(message)
